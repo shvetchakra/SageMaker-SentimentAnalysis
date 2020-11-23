@@ -14875,113 +14875,30 @@ Billable seconds: 280
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">estimator</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-30-fd89e384d225&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>estimator<span class="ansi-blue-fg">.</span>wait<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">AttributeError</span>: &#39;PyTorch&#39; object has no attribute &#39;wait&#39;</pre>
-</div>
-</div>
-
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># this function loads the already completed training job to the Estimater</span>
 <span class="c1"># For first please comment it</span>
 
-<span class="n">my_training_job_name</span> <span class="o">=</span> <span class="s1">&#39;sagemaker-pytorch-2020-11-22-10-32-41-174&#39;</span>
-<span class="n">estimator</span> <span class="o">=</span> <span class="n">PyTorch</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">my_training_job_name</span><span class="p">)</span>
+<span class="c1">#my_training_job_name = &#39;sagemaker-pytorch-2020-11-22-10-32-41-174&#39;</span>
+<span class="c1">#estimator = PyTorch.attach(my_training_job_name)</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-28-b85fa37850db&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> 
-<span class="ansi-green-intense-fg ansi-bold">      4</span> my_training_job_name <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">&#39;sagemaker-pytorch-2020-11-22-10-32-41-174&#39;</span>
-<span class="ansi-green-fg">----&gt; 5</span><span class="ansi-red-fg"> </span>estimator <span class="ansi-blue-fg">=</span> PyTorch<span class="ansi-blue-fg">.</span>attach<span class="ansi-blue-fg">(</span>my_training_job_name<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/pytorch_p36/lib/python3.6/site-packages/sagemaker/estimator.py</span> in <span class="ansi-cyan-fg">attach</span><span class="ansi-blue-fg">(cls, training_job_name, sagemaker_session, model_channel_name)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1915</span>         &#34;&#34;&#34;
-<span class="ansi-green-intense-fg ansi-bold">   1916</span>         estimator = super(Framework, cls).attach(
-<span class="ansi-green-fg">-&gt; 1917</span><span class="ansi-red-fg">             </span>training_job_name<span class="ansi-blue-fg">,</span> sagemaker_session<span class="ansi-blue-fg">,</span> model_channel_name
-<span class="ansi-green-intense-fg ansi-bold">   1918</span>         )
-<span class="ansi-green-intense-fg ansi-bold">   1919</span> 
-
-<span class="ansi-green-fg">~/anaconda3/envs/pytorch_p36/lib/python3.6/site-packages/sagemaker/estimator.py</span> in <span class="ansi-cyan-fg">attach</span><span class="ansi-blue-fg">(cls, training_job_name, sagemaker_session, model_channel_name)</span>
-<span class="ansi-green-intense-fg ansi-bold">    634</span>             TrainingJobName<span class="ansi-blue-fg">=</span>training_job_name
-<span class="ansi-green-intense-fg ansi-bold">    635</span>         )
-<span class="ansi-green-fg">--&gt; 636</span><span class="ansi-red-fg">         </span>init_params <span class="ansi-blue-fg">=</span> cls<span class="ansi-blue-fg">.</span>_prepare_init_params_from_job_description<span class="ansi-blue-fg">(</span>job_details<span class="ansi-blue-fg">,</span> model_channel_name<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    637</span>         tags = sagemaker_session.sagemaker_client.list_tags(
-<span class="ansi-green-intense-fg ansi-bold">    638</span>             ResourceArn<span class="ansi-blue-fg">=</span>job_details<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#34;TrainingJobArn&#34;</span><span class="ansi-blue-fg">]</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/pytorch_p36/lib/python3.6/site-packages/sagemaker/pytorch/estimator.py</span> in <span class="ansi-cyan-fg">_prepare_init_params_from_job_description</span><span class="ansi-blue-fg">(cls, job_details, model_channel_name)</span>
-<span class="ansi-green-intense-fg ansi-bold">    206</span>         &#34;&#34;&#34;
-<span class="ansi-green-intense-fg ansi-bold">    207</span>         init_params = super(PyTorch, cls)._prepare_init_params_from_job_description(
-<span class="ansi-green-fg">--&gt; 208</span><span class="ansi-red-fg">             </span>job_details<span class="ansi-blue-fg">,</span> model_channel_name
-<span class="ansi-green-intense-fg ansi-bold">    209</span>         )
-<span class="ansi-green-intense-fg ansi-bold">    210</span>         image_name <span class="ansi-blue-fg">=</span> init_params<span class="ansi-blue-fg">.</span>pop<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;image&#34;</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/pytorch_p36/lib/python3.6/site-packages/sagemaker/estimator.py</span> in <span class="ansi-cyan-fg">_prepare_init_params_from_job_description</span><span class="ansi-blue-fg">(cls, job_details, model_channel_name)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1837</span>         init_params<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#34;source_dir&#34;</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> json<span class="ansi-blue-fg">.</span>loads<span class="ansi-blue-fg">(</span>init_params<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#34;hyperparameters&#34;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">.</span>get<span class="ansi-blue-fg">(</span>DIR_PARAM_NAME<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1838</span>         init_params[&#34;enable_cloudwatch_metrics&#34;] = json.loads(
-<span class="ansi-green-fg">-&gt; 1839</span><span class="ansi-red-fg">             </span>init_params<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#34;hyperparameters&#34;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">.</span>get<span class="ansi-blue-fg">(</span>CLOUDWATCH_METRICS_PARAM_NAME<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1840</span>         )
-<span class="ansi-green-intense-fg ansi-bold">   1841</span>         init_params[&#34;container_log_level&#34;] = json.loads(
-
-<span class="ansi-green-fg">~/anaconda3/envs/pytorch_p36/lib/python3.6/json/__init__.py</span> in <span class="ansi-cyan-fg">loads</span><span class="ansi-blue-fg">(s, encoding, cls, object_hook, parse_float, parse_int, parse_constant, object_pairs_hook, **kw)</span>
-<span class="ansi-green-intense-fg ansi-bold">    346</span>         <span class="ansi-green-fg">if</span> <span class="ansi-green-fg">not</span> isinstance<span class="ansi-blue-fg">(</span>s<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">(</span>bytes<span class="ansi-blue-fg">,</span> bytearray<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    347</span>             raise TypeError(&#39;the JSON object must be str, bytes or bytearray, &#39;
-<span class="ansi-green-fg">--&gt; 348</span><span class="ansi-red-fg">                             &#39;not {!r}&#39;.format(s.__class__.__name__))
-</span><span class="ansi-green-intense-fg ansi-bold">    349</span>         s <span class="ansi-blue-fg">=</span> s<span class="ansi-blue-fg">.</span>decode<span class="ansi-blue-fg">(</span>detect_encoding<span class="ansi-blue-fg">(</span>s<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;surrogatepass&#39;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    350</span> 
-
-<span class="ansi-red-fg">TypeError</span>: the JSON object must be str, bytes or bytearray, not &#39;NoneType&#39;</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -16030,7 +15947,7 @@ Billable seconds: 280
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="prompt input_prompt">In&nbsp;[61]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sagemaker.predictor</span> <span class="kn">import</span> <span class="n">RealTimePredictor</span>
@@ -16094,7 +16011,7 @@ Billable seconds: 280
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[63]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span><span class="o">,</span> <span class="nn">os</span>
@@ -16125,7 +16042,7 @@ Billable seconds: 280
                 <span class="c1"># Read in the review and convert to &#39;utf-8&#39; for transmission via HTTP</span>
                 <span class="n">review_input</span> <span class="o">=</span> <span class="n">review</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
                 <span class="c1"># Send the review to the predictor and store the results</span>
-                <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">review_input</span><span class="p">))</span>
+                
                 <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">float</span><span class="p">((</span><span class="n">predictor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">review_input</span><span class="p">))</span><span class="o">.</span><span class="n">decode</span><span class="p">())))</span>
                 
             <span class="c1"># Sending reviews to our endpoint one at a time takes a while so we</span>
@@ -16144,7 +16061,7 @@ Billable seconds: 280
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ground</span><span class="p">,</span> <span class="n">results</span> <span class="o">=</span> <span class="n">test_reviews</span><span class="p">()</span>
@@ -16165,7 +16082,6 @@ Billable seconds: 280
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Starting  pos  files
-&lt;class &#39;bytes&#39;&gt;
 </pre>
 </div>
 </div>
@@ -16178,13 +16094,13 @@ Billable seconds: 280
 <div class="output_subarea output_text output_error">
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ValidationError</span>                           Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-60-27d1fd4b7c7b&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-red-fg">ModelError</span>                                Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-64-27d1fd4b7c7b&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>ground<span class="ansi-blue-fg">,</span> results <span class="ansi-blue-fg">=</span> test_reviews<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
 
-<span class="ansi-green-fg">&lt;ipython-input-51-ad290fdeed0c&gt;</span> in <span class="ansi-cyan-fg">test_reviews</span><span class="ansi-blue-fg">(data_dir, stop)</span>
+<span class="ansi-green-fg">&lt;ipython-input-63-b09ff43287ef&gt;</span> in <span class="ansi-cyan-fg">test_reviews</span><span class="ansi-blue-fg">(data_dir, stop)</span>
 <span class="ansi-green-intense-fg ansi-bold">     28</span>                 <span class="ansi-red-fg"># Send the review to the predictor and store the results</span>
-<span class="ansi-green-intense-fg ansi-bold">     29</span>                 print<span class="ansi-blue-fg">(</span>type<span class="ansi-blue-fg">(</span>review_input<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     29</span> 
 <span class="ansi-green-fg">---&gt; 30</span><span class="ansi-red-fg">                 </span>results<span class="ansi-blue-fg">.</span>append<span class="ansi-blue-fg">(</span>int<span class="ansi-blue-fg">(</span>float<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">(</span>predictor<span class="ansi-blue-fg">.</span>predict<span class="ansi-blue-fg">(</span>review_input<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>decode<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">     31</span> 
 <span class="ansi-green-intense-fg ansi-bold">     32</span>             <span class="ansi-red-fg"># Sending reviews to our endpoint one at a time takes a while so we</span>
@@ -16210,7 +16126,11 @@ Billable seconds: 280
 <span class="ansi-green-intense-fg ansi-bold">    677</span>         <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-intense-fg ansi-bold">    678</span>             <span class="ansi-green-fg">return</span> parsed_response
 
-<span class="ansi-red-fg">ValidationError</span>: An error occurred (ValidationError) when calling the InvokeEndpoint operation: Endpoint sagemaker-pytorch-2020-11-23-12-14-57-216 of account 769207522942 not found.</pre>
+<span class="ansi-red-fg">ModelError</span>: An error occurred (ModelError) when calling the InvokeEndpoint operation: Received server error (500) from model with message &#34;&lt;!DOCTYPE HTML PUBLIC &#34;-//W3C//DTD HTML 3.2 Final//EN&#34;&gt;
+&lt;title&gt;500 Internal Server Error&lt;/title&gt;
+&lt;h1&gt;Internal Server Error&lt;/h1&gt;
+&lt;p&gt;The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.&lt;/p&gt;
+&#34;. See https://us-east-2.console.aws.amazon.com/cloudwatch/home?region=us-east-2#logEventViewer:group=/aws/sagemaker/Endpoints/sagemaker-pytorch-2020-11-23-14-44-29-381 in account 769207522942 for more information.</pre>
 </div>
 </div>
 
